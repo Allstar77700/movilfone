@@ -1,0 +1,368 @@
+/* Colores Azules y Celestes (6 tonos variados) */
+:root {
+    --blue-darkest: #002147; /* Casi negro azulado */
+    --blue-dark: #003366;   /* Azul marino oscuro */
+    --blue-medium: #005090;  /* Azul intermedio */
+    --blue-light: #007bff;   /* Azul vibrante (Bootstrap primary) */
+    --celeste-medium: #6cb6ff; /* Celeste medio */
+    --celeste-light: #a8d7ff; /* Celeste muy claro */
+    --text-dark: #333;
+    --text-light: #f4f4f4;
+    --white: #fff;
+    --gray-light: #f4f4f4;
+    --gray-medium: #eee;
+    --box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    --border-radius: 8px;
+}
+
+/* Estilos Generales */
+body {
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--gray-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Encabezado */
+.main-header {
+    background-color: var(--blue-darkest);
+    color: var(--white);
+    padding: 1rem 0;
+    box-shadow: var(--box-shadow);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.main-header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    margin: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--celeste-light);
+}
+
+.main-nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.main-nav ul li {
+    margin-left: 25px;
+}
+
+.main-nav ul li a {
+    color: var(--celeste-medium);
+    text-decoration: none;
+    font-weight: 400;
+    font-size: 1.1rem;
+    padding: 5px 0;
+    transition: color 0.3s ease-in-out;
+}
+
+.main-nav ul li a:hover,
+.main-nav ul li a.active {
+    color: var(--celeste-light);
+    border-bottom: 2px solid var(--celeste-light);
+}
+
+/* Sección Hero (Presentación Inicial) */
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 600px; /* Ajusta la altura según tus preferencias */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--white);
+}
+
+.hero-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Asegura que la imagen cubra el área */
+    filter: brightness(0.6); /* Oscurece la imagen para que el texto resalte */
+    z-index: 1;
+}
+
+.hero-text {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.4); /* Fondo semi-transparente para el texto */
+    border-radius: var(--border-radius);
+}
+
+.hero-text h2 {
+    font-size: 3.5rem;
+    margin-bottom: 15px;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    color: var(--celeste-light);
+}
+
+.hero-text p {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    font-weight: 300;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Botones */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+    border: none;
+}
+
+.btn-primary {
+    background-color: var(--blue-light);
+    color: var(--white);
+    box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+}
+
+.btn-primary:hover {
+    background-color: var(--blue-medium);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 123, 255, 0.5);
+}
+
+.btn-secondary {
+    background-color: var(--celeste-medium);
+    color: var(--blue-darkest);
+    border: 2px solid var(--celeste-medium);
+}
+
+.btn-secondary:hover {
+    background-color: var(--celeste-light);
+    border-color: var(--celeste-light);
+    transform: translateY(-3px);
+}
+
+/* Títulos de Sección */
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 40px;
+    color: var(--blue-dark);
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 4px;
+    background-color: var(--blue-light);
+    border-radius: 2px;
+}
+
+/* Contenido Principal */
+.main-content {
+    padding: 60px 0;
+}
+
+section {
+    padding: 60px 0;
+    margin-bottom: 40px;
+}
+
+section:nth-of-type(even) {
+    background-color: var(--gray-medium);
+}
+
+/* Sección de Productos */
+.products-section {
+    text-align: center;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.product-card {
+    background-color: var(--white);
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    padding: 25px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid var(--celeste-light); /* Recuadro de color celeste */
+}
+
+.product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.product-card img {
+    max-width: 100%;
+    height: 200px;
+    object-fit: contain;
+    margin-bottom: 15px;
+    border-radius: var(--border-radius);
+}
+
+.product-card h3 {
+    font-size: 1.8rem;
+    color: var(--blue-dark);
+    margin-bottom: 10px;
+}
+
+.product-card p {
+    font-size: 1rem;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    height: 100px; /* Altura fija para la descripción */
+    overflow: hidden; /* Oculta el desbordamiento */
+    text-overflow: ellipsis; /* Añade puntos suspensivos si el texto es muy largo */
+}
+
+.product-card .price {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--blue-medium);
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Sección Quiénes Somos y Concepto */
+.about-section,
+.concept-section {
+    text-align: justify;
+}
+
+.about-section p,
+.concept-section p,
+.concept-section ul {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+    color: var(--text-dark);
+}
+
+.concept-section h3 {
+    font-size: 1.8rem;
+    color: var(--blue-dark);
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid var(--celeste-medium);
+    padding-bottom: 5px;
+}
+
+.concept-section h4 {
+    font-size: 1.4rem;
+    color: var(--blue-medium);
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.concept-section ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    padding-left: 0;
+}
+
+.concept-section ul li {
+    margin-bottom: 10px;
+}
+
+.concept-section ul li strong {
+    color: var(--blue-dark);
+}
+
+/* Sección de Contacto */
+.contact-section {
+    text-align: center;
+}
+
+.contact-info p {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+    color: var(--text-dark);
+}
+
+.contact-form-container {
+    max-width: 600px;
+    margin: 40px auto 0;
+    background-color: var(--white);
+    padding: 30px;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: 2px solid var(--celeste-medium);
+}
+
+.contact-form label {
+    display: block;
+    text-align: left;
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: var(--blue-dark);
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: calc(100% - 20px);
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid var(--celeste-medium);
+    border-radius: 5px;
+    font-size: 1rem;
+    color: var(--text-dark);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--blue-light);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.contact-form textarea {
+    resize: vertical;
+}
+
+/* Pie de Página */
+.main-footer {
+    background-color: var(--blue-darkest);
+    color: var(--celeste-light);
+    text-align: center;
+    padding: 25px 0;
+    margin-top: 50px;
+}
+
+.main-footer p {
+    margin: 0;
+    font-size: 0.9rem;
+}
